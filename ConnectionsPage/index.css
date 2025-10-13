@@ -38,8 +38,9 @@ body {
   background-color: var(--secondary-orange);
   border-radius: 5px;
   transition: all 0.3s ease;
+}
 
-  #weather-widget {
+#weather-widget {
   color: var(--dark-brown);
   font-weight: bold;
   font-size: 1rem;
