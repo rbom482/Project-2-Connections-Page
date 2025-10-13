@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MarchingBandConnect</title>
+  <title>Friends | MarchingBandConnect</title>
   <link rel="icon" href="assets/BandPic.png" type="image/png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
   <!--------------- NAVBAR SECTION --------------->
   <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
     <div class="container-fluid">
@@ -16,150 +17,153 @@
         <img src="assets/BandPic.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
         MarchingBandConnect
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="announcements.html">Announcements</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Posts</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="friends.html">Manage Friends</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="chat.html">Chat</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="profile.html">Profile</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="announcements.html">Announcements</a></li>
+          <li class="nav-item"><a class="nav-link" href="posts.html">Posts</a></li>
+          <li class="nav-item"><a class="nav-link active" href="friends.html">Manage Friends</a></li>
+          <li class="nav-item"><a class="nav-link" href="chat.html">Chat</a></li>
+          <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!--------------- MAIN SECTION --------------->
-  <div class="container mt-2">
-    <h1 class="display-4 mt-0">Friends</h1>
+  <!--------------- PAGE HEADER --------------->
+  <div class="container text-center mt-5">
+    <div class="custom-header rounded p-5 shadow-sm">
+      <h1 class="display-4 fw-bold text-white mb-3">Manage Friends</h1>
+      <p class="lead text-white">View friend requests, suggestions, and your current connections.</p>
+    </div>
+  </div>
+
+  <!--------------- FRIENDS TABS --------------->
+  <div class="container mt-5">
     <div class="row">
-      <div class="col-md-4 col-xs-12" id="category-section">
+      <div class="col-md-3" id="category-section">
         <div class="list-group" id="list-tab" role="tablist">
-          <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#friend-request" role="tab" aria-controls="list-home">Friend Requests</a>
-          <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#suggestions" role="tab" aria-controls="list-profile">Suggestions</a>
-          <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#all-friends" role="tab" aria-controls="list-messages">All Friends</a>
+          <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#friend-requests" role="tab">Friend Requests</a>
+          <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#suggested-friends" role="tab">Suggestions</a>
+          <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#all-friends" role="tab">All Friends</a>
         </div>
       </div>
-      <div class="col-md-8 col-xs-12" id="display-section">
+
+      <div class="col-md-9">
         <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="friend-request" role="tabpanel" aria-labelledby="list-home-list">
+
+          <!------- FRIEND REQUESTS ------->
+          <div class="tab-pane fade show active" id="friend-requests" role="tabpanel">
+
+            <!-- John Philip Sousa -->
             <div class="card mb-3 friend-card">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="https://reqres.in/img/faces/5-image.jpg" class="img-fluid rounded-start w-100">
+                  <img src="assets/Sousa.png" class="img-fluid rounded-start w-100" alt="John Philip Sousa">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body d-flex flex-column justify-content-between h-100">
                     <div>
-                      <div class="d-flex justify-content-between friend-name">
-                        <h5 class="card-title">Mark Alcocer</h5>
-                        <p class="card-text"><small class="text-body-secondary">1d ago</small></p>
-                      </div>
-                      <p class="card-text lead fs-6">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, officia.</p>
-                      <div class="mutual-friends">
-                        <img src="https://reqres.in/img/faces/3-image.jpg" width="30" height="30">
-                        <img src="https://reqres.in/img/faces/6-image.jpg" width="30" height="30">
-                        <img src="https://reqres.in/img/faces/7-image.jpg" width="30" height="30">
-                        <span class="text-muted">
-                          +5 mutual friends
-                        </span>
-                      </div>
+                      <h5 class="card-title">John Philip Sousa</h5>
+                      <p class="card-text lead fs-6">The “March King” himself. Wants to connect with you!</p>
                     </div>
                     <div>
-                      <button type="button" class="btn btn-primary">Confirm</button>
-                      <button type="button" class="btn btn-secondary">Reject</button>
+                      <button type="button" class="btn btn-primary">Accept</button>
+                      <button type="button" class="btn btn-secondary">Decline</button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <!-- John Williams -->
             <div class="card mb-3 friend-card">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="https://reqres.in/img/faces/2-image.jpg" class="img-fluid rounded-start w-100">
+                  <img src="assets/Williams.png" class="img-fluid rounded-start w-100" alt="John Williams">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body d-flex flex-column justify-content-between h-100">
                     <div>
-                      <div class="d-flex justify-content-between friend-name">
-                        <h5 class="card-title">Mary Moreno</h5>
-                        <p class="card-text"><small class="text-body-secondary">2w ago</small></p>
-                      </div>
-                      <p class="card-text lead fs-6">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, officia.</p>
-                      <div class="mutual-friends">
-                        <img src="https://reqres.in/img/faces/8-image.jpg" width="30" height="30">
-                        <img src="https://reqres.in/img/faces/9-image.jpg" width="30" height="30">
-                        <img src="https://reqres.in/img/faces/10-image.jpg" width="30" height="30">
-                        <span class="text-muted">
-                          +5 mutual friends
-                        </span>
-                      </div>
+                      <h5 class="card-title">John Williams</h5>
+                      <p class="card-text lead fs-6">Legendary film composer. Ready to collaborate!</p>
                     </div>
                     <div>
-                      <button type="button" class="btn btn-primary">Confirm</button>
-                      <button type="button" class="btn btn-secondary">Reject</button>
+                      <button type="button" class="btn btn-primary">Accept</button>
+                      <button type="button" class="btn btn-secondary">Decline</button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
           </div>
-          <div class="tab-pane fade" id="suggestions" role="tabpanel" aria-labelledby="list-profile-list">
+
+          <!------- SUGGESTED FRIENDS ------->
+          <div class="tab-pane fade" id="suggested-friends" role="tabpanel">
+
+            <!-- Chappell Roan -->
             <div class="card mb-3 friend-card">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="https://reqres.in/img/faces/4-image.jpg" class="img-fluid rounded-start w-100">
+                  <img src="assets/Roan.png" class="img-fluid rounded-start w-100" alt="Chappell Roan">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body d-flex flex-column justify-content-between h-100">
                     <div>
-                      <div class="d-flex justify-content-between friend-name">
-                        <h5 class="card-title">Pablo Exequiel</h5>
-                      </div>
-                      <p class="card-text lead fs-6">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, officia.</p>
-                      <div class="mutual-friends">
-                        <img src="https://reqres.in/img/faces/8-image.jpg" width="30" height="30">
-                        <img src="https://reqres.in/img/faces/9-image.jpg" width="30" height="30">
-                        <img src="https://reqres.in/img/faces/10-image.jpg" width="30" height="30">
-                        <span class="text-muted">
-                          +5 mutual friends
-                        </span>
-                      </div>
+                      <h5 class="card-title">Chappell Roan</h5>
+                      <p class="card-text lead fs-6">Pop powerhouse and rising icon. Suggested friend.</p>
                     </div>
                     <div>
-                      <button type="button" class="btn btn-primary">Send request</button>
-                      <button type="button" class="btn btn-secondary">Ignore</button>
+                      <button type="button" class="btn btn-primary">Add Friend</button>
+                      <button type="button" class="btn btn-secondary">Dismiss</button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="tab-pane fade" id="all-friends" role="tabpanel" aria-labelledby="list-messages-list">
+
+            <!-- Tobias Forge -->
             <div class="card mb-3 friend-card">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="https://reqres.in/img/faces/3-image.jpg" class="img-fluid rounded-start w-100">
+                  <img src="assets/toblerone2.png" class="img-fluid rounded-start w-100" alt="Tobias Forge">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body d-flex flex-column justify-content-between h-100">
                     <div>
-                      <div class="d-flex justify-content-between friend-name">
-                        <h5 class="card-title">Anne</h5>
-                      </div>
-                      <p class="card-text lead fs-6">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, officia.</p>
+                      <h5 class="card-title">Tobias Forge</h5>
+                      <p class="card-text lead fs-6">Frontman of Ghost. Known for his theatrical stage presence.</p>
+                    </div>
+                    <div>
+                      <button type="button" class="btn btn-primary">Add Friend</button>
+                      <button type="button" class="btn btn-secondary">Dismiss</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!------- ALL FRIENDS ------->
+          <div class="tab-pane fade" id="all-friends" role="tabpanel">
+
+            
+            <div class="card mb-3 friend-card">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="assets/drummajor.png" class="img-fluid rounded-start w-100" alt="Jane Doe">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body d-flex flex-column justify-content-between h-100">
+                    <div>
+                      <h5 class="card-title">Drum Major</h5>
+                      <p class="card-text lead fs-6">Keep your eyes on her at all times.</p>
                     </div>
                     <div>
                       <button type="button" class="btn btn-primary">Message</button>
@@ -169,17 +173,65 @@
                 </div>
               </div>
             </div>
+
+            
+            <div class="card mb-3 friend-card">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="assets/trumpet.png" class="img-fluid rounded-start w-100" alt="Alex Chen">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body d-flex flex-column justify-content-between h-100">
+                    <div>
+                      <h5 class="card-title">Brass Section Leader</h5>
+                      <p class="card-text lead fs-6">Brass section leader. Always up for a good solo. His ego enters the room before he does.</p>
+                    </div>
+                    <div>
+                      <button type="button" class="btn btn-primary">Message</button>
+                      <button type="button" class="btn btn-secondary">Unfollow</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          
+            <div class="card mb-3 friend-card">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="assets/freshman.png" class="img-fluid rounded-start w-100" alt="Riley Martinez">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body d-flex flex-column justify-content-between h-100">
+                    <div>
+                      <h5 class="card-title">Adopted Freshman</h5>
+                      <p class="card-text lead fs-6">Everyone adopts a cute little freshman. Scare them out of their minds but also make sure they don't screw up.</p>
+                    </div>
+                    <div>
+                      <button type="button" class="btn btn-primary">Message</button>
+                      <button type="button" class="btn btn-secondary">Unfollow</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
 
+  <!--------------- FOOTER --------------->
   <footer class="text-center mt-5 py-3 border-top">
     <small>&copy; 2025 MarchingBandConnect</small>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+  <!--------------- SCRIPTS --------------->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+
+
+
 </body>
 </html>

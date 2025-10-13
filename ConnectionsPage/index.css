@@ -1,4 +1,8 @@
-/* Color Theme Variables */
+/* ===============================
+   MarchingBandConnect - index.css
+   =============================== */
+
+/* ---------- Color Theme Variables ---------- */
 :root {
   --bg-light: #F4E7E1;
   --primary-orange: #FF9B45;
@@ -6,18 +10,13 @@
   --dark-brown: #521C0D;
 }
 
-/* Body and Background */
+/* ---------- Body & Background ---------- */
 body {
   background-color: var(--bg-light);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Custom Header */
-.custom-header {
-  background: var(--primary-orange);
-  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange) 100%);
-}
-
-/* Navbar Styling */
+/* ---------- Navbar ---------- */
 .navbar.bg-dark {
   background: var(--primary-orange) !important;
   border-bottom: 2px solid var(--secondary-orange) !important;
@@ -30,6 +29,7 @@ body {
 
 .nav-link {
   color: var(--dark-brown) !important;
+  transition: all 0.3s ease;
 }
 
 .nav-link:hover,
@@ -37,9 +37,9 @@ body {
   color: white !important;
   background-color: var(--secondary-orange);
   border-radius: 5px;
-  transition: all 0.3s ease;
 }
 
+/* ---------- Weather Widget ---------- */
 #weather-widget {
   color: var(--dark-brown);
   font-weight: bold;
@@ -50,38 +50,93 @@ body {
   color: var(--dark-brown);
 }
 
+#weather-widget img {
+  vertical-align: middle;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+}
+
 @media (max-width: 768px) {
   #weather-widget {
     font-size: 0.9rem;
     padding-right: 0.5rem;
   }
 }
-/* Main Content Header */
-.display-4 {
+
+/* ---------- Custom Header ---------- */
+.custom-header {
+  background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(82, 28, 13, 0.15);
+}
+
+/* ---------- Typography ---------- */
+.display-4, .display-5 {
   color: var(--dark-brown);
   font-weight: bold;
 }
 
-/* Friend Cards */
-.friend-card {
-  max-width: 600px;
-  border: 2px solid var(--primary-orange);
-  box-shadow: 0 4px 8px rgba(82, 28, 13, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.friend-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(82, 28, 13, 0.15);
-}
-
-/* Card Headers */
-.card-title {
+.section-title {
+  font-weight: 700;
   color: var(--dark-brown);
-  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  letter-spacing: 0.5px;
 }
 
-/* Buttons */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary-orange), var(--secondary-orange));
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* ---------- Announcements Section ---------- */
+.announcement-intro {
+  background: #ffffff;
+  color: var(--dark-brown) !important;
+  padding: 15px 20px;
+  border-radius: 10px;
+  max-width: 700px;
+  line-height: 1.6;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(82, 28, 13, 0.1);
+}
+
+/* ---------- Posts Section ---------- */
+.post-card {
+  border-left: 6px solid var(--primary-orange);
+  background-color: #fff8f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(82, 28, 13, 0.15);
+}
+
+/* ---------- Event Cards ---------- */
+.event-card {
+  background-color: #fff8f0;
+  border-left: 6px solid var(--primary-orange);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: var(--dark-brown);
+}
+
+.event-card h5 {
+  color: var(--dark-brown);
+  font-weight: 600;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(82, 28, 13, 0.15);
+}
+
+/* ---------- Buttons ---------- */
 .btn-primary {
   background-color: var(--primary-orange);
   border-color: var(--primary-orange);
@@ -108,42 +163,52 @@ body {
   color: white;
 }
 
-/* List Group (Categories) */
-.list-group-item {
-  background-color: var(--bg-light);
-  border-color: var(--primary-orange);
-  color: var(--dark-brown);
+/* ---------- Friend Cards ---------- */
+.friend-card {
+  max-width: 600px;
+  border: 2px solid var(--primary-orange);
+  box-shadow: 0 4px 8px rgba(82, 28, 13, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.list-group-item.active {
-  background-color: var(--primary-orange);
-  border-color: var(--primary-orange);
+.friend-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(82, 28, 13, 0.15);
+}
+
+.card-title {
   color: var(--dark-brown);
   font-weight: bold;
 }
 
-.list-group-item:hover {
-  background-color: var(--primary-orange);
-  color: var(--dark-brown);
-}
-
-/* Mutual Friends */
-.friend-card .mutual-friends {
-  margin-left: 10px;
-}
-
-.friend-card .mutual-friends img {
-  border-radius: 50%;
-  margin-left: -10px;
+/* ---------- Chat Section ---------- */
+.chat-box {
+  background: #fff8f0;
+  max-height: 400px;
+  overflow-y: auto;
   border: 2px solid var(--primary-orange);
+  padding: 1rem;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  #category-section {
-    margin-bottom: 1rem;
-  }
+.chat-message {
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  background-color: rgba(255, 155, 69, 0.15);
+  color: var(--dark-brown);
+}
 
+/* ---------- Profile Section ---------- */
+.card img {
+  border: 3px solid var(--primary-orange);
+}
+
+.card-title {
+  color: var(--dark-brown);
+}
+
+/* ---------- Responsive Tweaks ---------- */
+@media screen and (max-width: 768px) {
   .friend-card {
     text-align: center;
     padding-top: 1em;
@@ -154,133 +219,17 @@ body {
   .friend-card img.rounded-start {
     width: 100px !important;
     border-radius: 50% !important;
-  }
-
-  .friend-card .friend-name {
-    flex-direction: column;
-  }
-
-  .friend-card .card-text {
-    padding-bottom: 0.5em;
-  }
-
-  .friend-card .mutual-friends {
-    padding-bottom: 1em;
-  }
-}
-
-.friend-card .mutual-friends {
-  margin-left: 10px;
-}
-
-.friend-card .mutual-friends img {
-  border-radius: 50%;
-  margin-left: -10px;
-}
-
-@media screen and (max-width: 768px) {
-  #category-section {
-    margin-bottom: 1rem;
-  }
-
-  .friend-card {
-    text-align: center;
-    padding-top: 1em;
-    margin: auto;
-    max-width: 300px;
-  }
-
-  .friend-card img.rounded-start {
-    width: 100px !important;
-    border-radius: 50% !important;
-  }
-
-  .friend-card .friend-name {
-    flex-direction: column;
-  }
-
-  .friend-card .card-text {
-    padding-bottom: 0.5em;
-  }
-
-  .friend-card .mutual-friends {
-    padding-bottom: 1em;
-  }
-}
-
-/* Header styling */
-.announcement-header {
-  background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
-  color: #fff;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  box-shadow: 0 4px 10px rgba(82, 28, 13, 0.2);
-}
-
-.announcement-header h1 {
-  font-size: 2.5rem;
-  color: #fff;
-}
-
-.announcement-header p {
-  color: #fffdf8;
-}
-
-.announcement-intro {
-  background: #ffffff;
-  color: var(--dark-brown);
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
-  box-shadow: 0 2px 5px rgba(82, 28, 13, 0.15);
-}
-
-/* Section title divider */
-.section-title {
-  font-weight: 600;
-  color: var(--dark-brown);
-  position: relative;
-  display: inline-block;
-  padding-bottom: 10px;
-}
-
-.section-title::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(to right, var(--primary-orange), var(--secondary-orange));
-  margin: 8px auto 0;
-  border-radius: 2px;
-}
-
-/* Event cards */
-.event-card {
-  background-color: #fff8f0;
-  border-left: 6px solid var(--primary-orange);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  color: var(--dark-brown);
-}
-
-.event-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(82, 28, 13, 0.15);
-}
-
-/* Mobile optimization */
-@media (max-width: 768px) {
-  .announcement-header {
-    padding: 2.5rem 1.5rem;
-  }
-
-  .announcement-header h1 {
-    font-size: 2rem;
   }
 
   .announcement-intro {
     font-size: 0.95rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .chat-box {
+    max-height: 300px;
   }
 }
