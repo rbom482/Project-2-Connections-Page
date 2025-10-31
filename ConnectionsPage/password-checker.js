@@ -153,14 +153,17 @@ function showStrongPasswordEffects() {
     // Play the crowd cheer sound effect
     const audio = document.getElementById('strong-password-sound');
     
-    // Reset audio to beginning and play
-    audio.currentTime = 0;
-    
-    // Play the audio with error handling
-    audio.play().catch(function(error) {
-        console.log('Audio playback failed:', error);
-        // Audio autoplay might be blocked by browser - this is normal
-    });
+    if (audio) {
+        // Reset audio to beginning and play
+        audio.currentTime = 0;
+        
+        // Play the audio with error handling
+        audio.play().catch(function(error) {
+            console.log('Strong password audio playback failed:', error);
+            // Audio autoplay might be blocked by browser - this is normal
+            // Could add visual feedback here if needed
+        });
+    }
 }
 
 function showWeakPasswordEffects() {
@@ -173,14 +176,17 @@ function showWeakPasswordEffects() {
     // Play the womp womp sound effect
     const audio = document.getElementById('weak-password-sound');
     
-    // Reset audio to beginning and play
-    audio.currentTime = 0;
-    
-    // Play the audio with error handling
-    audio.play().catch(function(error) {
-        console.log('Audio playback failed:', error);
-        // Audio autoplay might be blocked by browser - this is normal
-    });
+    if (audio) {
+        // Reset audio to beginning and play
+        audio.currentTime = 0;
+        
+        // Play the audio with error handling
+        audio.play().catch(function(error) {
+            console.log('Weak password audio playback failed:', error);
+            // Audio autoplay might be blocked by browser - this is normal
+            // Could add visual feedback here if needed
+        });
+    }
 }
 
 function stopAllAudio() {
